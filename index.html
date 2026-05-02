@@ -8,68 +8,56 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #0d0d0d;
     color: white;
 }
 
-/* HEADER */
-header {
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
     background: black;
-    padding: 20px;
-    text-align: center;
     border-bottom: 2px solid orange;
 }
 
-header h1 {
-    margin: 0;
+nav h1 {
     color: orange;
 }
 
 /* HERO */
 .hero {
+    height: 90vh;
+    background: url('https://lh3.googleusercontent.com/p/AF1QipMnyCQ3hTfedRvvWHk4CSuZkYslvvZNEdvn5zIQ=s1360-w1360-h1020-rw') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 20px;
-    background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
-    position: relative;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
-}
-
-.hero h2, .hero p, .hero a {
-    position: relative;
+.hero-overlay {
+    background: rgba(0,0,0,0.75);
+    padding: 40px;
 }
 
 .hero h2 {
-    font-size: 40px;
-}
-
-.hero p {
-    color: #ccc;
+    font-size: 48px;
 }
 
 .btn {
     background: orange;
     color: black;
-    padding: 12px 25px;
+    padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
 }
 
-.btn:hover {
-    background: #ff9900;
-}
-
 /* SECTIONS */
 .section {
-    padding: 80px 20px;
-    max-width: 1000px;
+    padding: 80px 40px;
+    max-width: 1100px;
     margin: auto;
     text-align: center;
 }
@@ -77,22 +65,23 @@ header h1 {
 /* SERVICES */
 .services {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
 }
 
 .card {
     background: #1a1a1a;
-    padding: 20px;
-    width: 250px;
-    border-radius: 8px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
     transition: 0.3s;
 }
 
 .card img {
     width: 100%;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card h3 {
@@ -100,14 +89,29 @@ header h1 {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
-/* IMAGE SECTION */
-.image-section img {
+/* PROJECTS */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
     width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* CTA */
+.cta {
+    background: orange;
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 /* FOOTER */
@@ -115,66 +119,69 @@ footer {
     text-align: center;
     padding: 20px;
     background: black;
-    border-top: 2px solid orange;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
     <h1>🔶 Precision Build Co.</h1>
-    <p>Reliable Construction Services</p>
-</header>
+</nav>
 
 <section class="hero">
-    <h2>Building Your Vision With Strength & Precision</h2>
-    <p>We provide high-quality construction services for homes and businesses.</p>
-    <a href="#contact" class="btn">Get a Quote</a>
+    <div class="hero-overlay">
+        <h2>High-Quality Construction You Can Trust</h2>
+        <p>Residential & Commercial Projects Built to Last</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+    </div>
 </section>
 
 <section class="section">
     <h2>Our Services</h2>
     <div class="services">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMnyCQ3hTfedRvvWHk4CSuZkYslvvZNEdvn5zIQ=s1360-w1360-h1020-rw">
             <h3>Residential Construction</h3>
-            <p>Custom homes and renovations built with quality craftsmanship.</p>
+            <p>Custom homes and renovations with expert craftsmanship.</p>
         </div>
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHzjO2hX8aOFv2d4Ne9ldwGHCX3U9tm8plj9S-l65UIrdwElNmSj0dvX4yAtiQakOZ12zYqCQEvtL9_75sbYyiri7pHynB2LZcU3HyolQVo212Z7IZsvigGDnLcizLI6Vxujjrp=s1360-w1360-h1020-rw">
             <h3>Commercial Projects</h3>
-            <p>Professional construction solutions for businesses.</p>
+            <p>Professional builds for businesses and commercial spaces.</p>
         </div>
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMnyCQ3hTfedRvvWHk4CSuZkYslvvZNEdvn5zIQ=s1360-w1360-h1020-rw">
             <h3>Remodeling</h3>
-            <p>Upgrade and transform your space with modern designs.</p>
+            <p>Upgrade your space with modern and efficient designs.</p>
         </div>
     </div>
 </section>
 
-<section class="section image-section">
-    <h2>Why Choose Us</h2>
-    <p>✔ Experienced team<br>
-       ✔ Reliable and on-time<br>
-       ✔ Affordable pricing<br>
-       ✔ High-quality results</p>
-
-    <img src="https://images.unsplash.com/photo-1581091870622-3d7c3c7e1b66">
+<section class="section">
+    <h2>Recent Projects</h2>
+    <div class="gallery">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMnyCQ3hTfedRvvWHk4CSuZkYslvvZNEdvn5zIQ=s1360-w1360-h1020-rw">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHzjO2hX8aOFv2d4Ne9ldwGHCX3U9tm8plj9S-l65UIrdwElNmSj0dvX4yAtiQakOZ12zYqCQEvtL9_75sbYyiri7pHynB2LZcU3HyolQVo212Z7IZsvigGDnLcizLI6Vxujjrp=s1360-w1360-h1020-rw">
+    </div>
 </section>
 
-<section class="section image-section" id="contact">
+<section class="cta">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Contact us today for a free estimate.</p>
+</section>
+
+<section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>Phone: (850) 000-0000</p>
     <p>Location: Panama City, FL</p>
     <p>Email: info@precisionbuildco.com</p>
-
-    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
 </section>
 
 <footer>
-    <p>© 2026 Precision Build Co. All rights reserved.</p>
+    <p>© 2026 Precision Build Co.</p>
 </footer>
 
 </body>
